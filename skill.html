@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link rel="stylesheet" href="skill.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="menu-container"></div>
+        <div class="skills-container">
+            <h1>My knowledges</h1>
+            <div class="skills-icons">
+                <i class="fab fa-python" title="Python" data-skill="90"></i>
+                <i class="fab fa-linux" title="Linux" data-skill="80"></i>
+                <i class="fas fa-database" title="MySQL" data-skill="85"></i>
+                <i class="fab fa-windows" title="Windows" data-skill="70"></i>
+                <i class="fas fa-terminal" title="Shell Scripting" data-skill="75"></i>
+                <i class="fab fa-git" title="Git" data-skill="95"></i>
+                <i class="fab fa-github" title="GitHub" data-skill="90"></i>
+                <i class="fas fa-feather-alt" title="Maven" data-skill="60"></i>
+                <i class="fas fa-server" title="Tomcat" data-skill="65"></i>
+                <i class="fas fa-box-open" title="Pip" data-skill="85"></i>
+                <i class="fas fa-flask" title="Flask" data-skill="80"></i>
+                <i class="fab fa-jenkins" title="Jenkins" data-skill="70"></i>
+            </div>
+            <div class="proficiency-box">
+                <div class="proficiency-level" id="proficiency-level"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+
+        document.querySelectorAll('.skills-icons i').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                const skillLevel = this.getAttribute('data-skill');
+                const skillTitle = this.getAttribute('title');
+                const proficiencyLevel = document.getElementById('proficiency-level');
+                proficiencyLevel.style.width = skillLevel + '%';
+                proficiencyLevel.innerText = skillTitle + ' ' + skillLevel + '%';
+            });
+
+            // Reset the progress bar when the mouse leaves the icon
+            icon.addEventListener('mouseleave', function() {
+                const proficiencyLevel = document.getElementById('proficiency-level');
+                proficiencyLevel.style.width = '0%';
+                proficiencyLevel.innerText = '';
+            });
+        });
+    </script>
+</body>
+</html>

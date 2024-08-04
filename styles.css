@@ -1,0 +1,132 @@
+body {
+    background-color: #d3d3d3;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.image-container {
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: auto;
+    height: auto;
+    max-height: 300px;
+    border-style: solid;
+    border-color: #000; /* Black border */
+    border-width: 2px 10px 10px 2px; /* Top, Right, Bottom, Left */
+    border-radius: 20px;
+    transition: border-width 0.3s ease, transform 0.3s ease; /* Transition for smooth animation */
+}
+
+.image-container img:hover {
+    border-width: 2px 2px 2px 2px;
+    
+}
+
+.text-container {
+    margin-bottom: 20px;
+}
+
+.text-container h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hover-letter {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    letter-spacing: -10px; /* Adjust this value to decrease the space between letters */
+}
+
+.hover-letter:hover {
+    text-transform: capitalize;
+    transform: scale(1.9); /* Slightly enlarge the letter on hover */
+    letter-spacing: -1px; /* Keep the spacing consistent on hover */
+}
+
+
+.text-container h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.highlight-red {
+    color: #ff0000;
+    text-shadow: 
+        -1px -1px 0 #000000,  
+        1px -1px 0 #d3d3d3,
+        -1px 1px 0 #d3d3d3,
+        1px 1px 0 #000000,
+        -2px -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 2px 0 #d3d3d3,
+        2px 2px 0 #d3d3d3;
+}
+
+.color-stripes {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stripe {
+    width: 200px; /* Full width */
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-bottom-left-radius: 20px;
+    transform: rotate(-10deg);
+    position: relative;
+    right: -160px; /* 80% hidden */
+    transition: right 0.3s ease;
+    border: 5px solid transparent; /* Default border to ensure consistent sizing */
+}
+
+.stripe-wrapper {
+    position: relative;
+}
+
+.stripe:hover {
+    right: -5px; /* Fully visible on hover */
+}
+
+.red {
+    background-color: #ff0044;
+    border-color: #000000; /* Black border */
+}
+
+.blue {
+    background-color: #4a4aff;
+    border-color: #000000; /* Black border */
+}
+
+.green {
+    background-color: #33cc33;
+    border-color: #000000; /* Black border */
+}
+
+.orange {
+    background-color: #ff9933;
+    border-color: #000000; /* Black border*/
+}

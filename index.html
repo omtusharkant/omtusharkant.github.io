@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="assets/profile1.png" alt="Art Image">
+        </div>
+        <div class="text-container">
+            <h1 id="hover-text">
+                <span class="hover-letter">H</span>
+                <span class="hover-letter">e</span>
+                <span class="hover-letter">l</span>
+                <span class="hover-letter">l</span>
+                <span class="hover-letter">o</span>
+                <span> </span>
+                <span class="hover-letter">T</span>
+                <span class="hover-letter">h</span>
+                <span class="hover-letter">e</span>
+                <span class="hover-letter">r</span>
+                <span class="hover-letter">e</span>
+            </h1>
+            <h2>
+                <span class="highlight-red">Tusharkanta</span>
+                <picture>
+                    <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp" type="image/webp">
+                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋" width="32" height="32">
+                </picture>
+                <span class="highlight-red">Here</span>
+            </h2>
+        </div>
+        <div id="menu-container"></div>
+    </div>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+
+        // JavaScript to handle random color change on hover and reset on mouseout
+        const predefinedColors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD', '#E74C3C'];
+        const originalColor = '#000'; // Original color (black)
+
+        document.querySelectorAll('.hover-letter').forEach(letter => {
+            letter.addEventListener('mouseover', () => {
+                letter.style.color = getRandomPredefinedColor();
+            });
+
+            letter.addEventListener('mouseout', () => {
+                letter.style.color = originalColor;
+            });
+        });
+
+        function getRandomPredefinedColor() {
+            return predefinedColors[Math.floor(Math.random() * predefinedColors.length)];
+        }
+    </script>
+</body>
+</html>
