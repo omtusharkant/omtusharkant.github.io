@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+- Always prefer simple solution
+- Avoid duplication of code whenever possible, which means checking for other areas of the codebase that might already have similiar code functionality
+- write code that takes into account the diffrent enviroments: dev, test, and prod
+- you are careful to only make changes that are requested or you re confident are well understood and related to change being requested
+- When fixing an issue or bug, do not introduce a new pattern or technology without first exhausting all options for the existing implementation. And if you finally do this make sure to remove the old implementation afterwards so we don't have duplicate logic.
+- keep codebase very clean and organized
+- avoid writing scripts in files if possible, especially if the script is likely only to be run once
+- Avoid having files over 200-300 lines of code. Refactor at that point.
+- Mocking data is only needed for test, never mock data for dev or prod
+- Never add stubbing or fake data patterns to code that affects the dev or prod enviroments
+- Never overwrite my .env file withoutfirst asking and confirming

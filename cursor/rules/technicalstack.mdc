@@ -1,0 +1,10 @@
+---
+description: this project's tech stack
+globs: 
+alwaysApply: false
+---
+- WebGL for rendering
+- Three.js for handleing 3d rendering
+- Javascript for handling game logics
+- CSS3 for style in-game UI
+- HTML5 for structure
